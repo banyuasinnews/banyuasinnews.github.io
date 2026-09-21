@@ -1,10 +1,17 @@
-# Banyuasin News
+Banyuasin News - Static CMS
 
-Template portal berita statis untuk GitHub Pages.
+File utama:
+- index.html = beranda
+- news.js = DATA BERITA. Tambahkan objek berita di sini agar tampil di beranda.
+- admin.html = formulir pembuat artikel HTML.
+- style.css = desain.
+- script.js = fungsi beranda.
 
-## Cara pakai
-1. Upload semua isi folder ini ke repository `banyuasinnews.github.io`.
-2. Aktifkan GitHub Pages dari Settings → Pages → Deploy from a branch → `main` → `/ (root)`.
-3. Buka https://banyuasinnews.github.io
-
-Catatan: artikel dan data pada template adalah DEMO. Verifikasi seluruh fakta, nama, angka, kutipan, foto, dan sumber sebelum publikasi.
+Alur tambah berita:
+1. Buka admin.html.
+2. Isi berita.
+3. Klik Buat File Berita.
+4. Download artikel HTML.
+5. Upload artikel HTML ke root repository GitHub.
+6. Tambahkan objek berita yang ditampilkan oleh admin.html ke news.js.
+7. Commit changes.

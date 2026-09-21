@@ -2,86 +2,38 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Banyuasin News | Berita Terkini Banyuasin & Sumatera Selatan</title>
 <meta name="description" content="Banyuasin News menyajikan informasi terkini, faktual dan terverifikasi seputar Banyuasin dan Sumatera Selatan.">
-<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="topline"><div class="container topline-in"><span>Senin, 21 September 2026</span><span>Informasi Terkini Banyuasin & Sumatera Selatan</span></div></div>
-
-<header class="header">
-  <div class="container header-in">
-    <a class="brand" href="./index.html">
-      <span class="logo">BN</span>
-      <span><strong>BANYUASIN<span>NEWS</span></strong><small>Aktual • Faktual • Terverifikasi</small></span>
-    </a>
-    <div class="header-actions">
-      <a href="#" class="social">f</a><a href="#" class="social">𝕏</a><a href="#" class="social">▶</a>
-      <button class="search-btn" onclick="toggleSearch()">⌕ <span>Cari</span></button>
-    </div>
-  </div>
-</header>
-
-<nav class="nav">
-  <div class="container nav-in">
-    <a class="active" href="./index.html">Beranda</a>
-    <a href="#">Banyuasin</a><a href="#">Polisi</a><a href="#">Hukum</a><a href="#">Pemerintahan</a>
-    <a href="#">Ekonomi</a><a href="#">Pendidikan</a><a href="#">Olahraga</a><a href="#">Sumsel</a><a href="#">Nasional</a>
-  </div>
-</nav>
-
-<div id="searchPanel" class="search-panel">
-  <div class="container"><input id="searchInput" type="search" placeholder="Cari berita..." oninput="searchNews()"><div id="results"></div></div>
-</div>
-
+<header class="header"><div class="container header-in">
+<a class="brand" href="index.html"><span class="logo">BN</span><span><strong>BANYUASIN<span>NEWS</span></strong><small>Aktual • Faktual • Terverifikasi</small></span></a>
+<div class="header-actions"><a class="social" href="#">f</a><a class="social" href="#">𝕏</a><a class="social" href="#">▶</a><button class="search-btn" onclick="toggleSearch()">⌕ <span>Cari</span></button></div>
+</div></header>
+<nav class="nav"><div class="container nav-in"><a class="active" href="index.html">Beranda</a><a href="#">Banyuasin</a><a href="#">Polisi</a><a href="#">Hukum</a><a href="#">Pemerintahan</a><a href="#">Ekonomi</a><a href="#">Pendidikan</a><a href="#">Olahraga</a><a href="#">Sumsel</a><a href="#">Nasional</a></div></nav>
+<div id="searchPanel" class="search-panel"><div class="container"><input id="searchInput" type="search" placeholder="Cari berita..." oninput="searchNews()"><div id="results"></div></div></div>
 <div class="breaking"><div class="container breaking-in"><b>TERKINI</b><span>Informasi dan perkembangan terbaru dari Banyuasin</span><i>›</i></div></div>
 
 <main class="container">
-  <section class="lead-grid">
-    <article class="lead">
-      <div class="lead-photo"><span>FOTO BERITA UTAMA</span></div>
-      <div class="lead-copy">
-        <span class="tag">BANYUASIN</span>
-        <h1><a href="./ground-check-timbul-jaya.html">Ground Check Hotspot di Timbul Jaya, Polisi Temukan Lahan Terbakar Sekitar 1 Hektare</a></h1>
-        <p>Petugas melakukan pengecekan lapangan terhadap titik panas dan menemukan area lahan yang terbakar. Informasi dalam artikel perlu disesuaikan dengan hasil verifikasi di lapangan.</p>
-        <div class="by">21 September 2026 <b>•</b> Redaksi</div>
-      </div>
-    </article>
-    <aside class="side-lead">
-      <h2>Berita Pilihan</h2>
-      <article><div class="side-photo">FOTO</div><span class="tag">POLISI</span><h3><a href="#">Polisi Tingkatkan Patroli Pencegahan Karhutla di Wilayah Banyuasin</a></h3><small>21 September 2026</small></article>
-      <article><div class="side-photo">FOTO</div><span class="tag">PEMERINTAHAN</span><h3><a href="#">Pelayanan Publik dan Informasi Masyarakat Terus Diperkuat</a></h3><small>20 September 2026</small></article>
-    </aside>
-  </section>
+<section class="lead-grid">
+<article class="lead" id="lead"></article>
+<aside class="side-lead"><h2>Berita Pilihan</h2><div id="featured"></div></aside>
+</section>
 
-  <div class="section-head"><div><span class="eyebrow">UPDATE</span><h2>Berita Terbaru</h2></div><a href="#">Lihat semua berita →</a></div>
-  <section class="content-grid">
-    <div class="cards">
-      <article class="card"><div class="card-photo">FOTO</div><div class="card-body"><span class="tag">BANYUASIN</span><h3><a href="./ground-check-timbul-jaya.html">Ground Check Hotspot di Timbul Jaya, Polisi Temukan Lahan Terbakar Sekitar 1 Hektare</a></h3><small>21 September 2026 • Redaksi</small></div></article>
-      <article class="card"><div class="card-photo">FOTO</div><div class="card-body"><span class="tag">POLISI</span><h3><a href="#">Polisi Tingkatkan Patroli dan Pencegahan Karhutla di Wilayah Banyuasin</a></h3><small>21 September 2026 • Redaksi</small></div></article>
-      <article class="card"><div class="card-photo">FOTO</div><div class="card-body"><span class="tag">HUKUM</span><h3><a href="#">Informasi Penanganan Perkara dan Pelayanan Kepolisian untuk Masyarakat</a></h3><small>20 September 2026 • Redaksi</small></div></article>
-      <article class="card"><div class="card-photo">FOTO</div><div class="card-body"><span class="tag">SUMSEL</span><h3><a href="#">Kabar Terkini dari Wilayah Sumatera Selatan</a></h3><small>20 September 2026 • Redaksi</small></div></article>
-      <article class="card"><div class="card-photo">FOTO</div><div class="card-body"><span class="tag">PENDIDIKAN</span><h3><a href="#">Kegiatan Pendidikan dan Informasi Sekolah di Banyuasin</a></h3><small>19 September 2026 • Redaksi</small></div></article>
-      <article class="card"><div class="card-photo">FOTO</div><div class="card-body"><span class="tag">EKONOMI</span><h3><a href="#">Perkembangan Ekonomi dan Aktivitas Masyarakat Banyuasin</a></h3><small>19 September 2026 • Redaksi</small></div></article>
-    </div>
-    <aside class="sidebar">
-      <div class="widget"><div class="widget-title"><span>TERPOPULER</span></div>
-        <ol class="popular"><li><a href="./ground-check-timbul-jaya.html">Ground Check Hotspot di Timbul Jaya</a><small>Berita Banyuasin</small></li><li><a href="#">Patroli Pencegahan Karhutla</a><small>Polisi</small></li><li><a href="#">Informasi Terkini Banyuasin</a><small>Banyuasin</small></li><li><a href="#">Pelayanan Publik untuk Masyarakat</a><small>Pemerintahan</small></li><li><a href="#">Kabar Sumatera Selatan</a><small>Sumsel</small></li></ol>
-      </div>
-      <div class="widget"><div class="widget-title"><span>KATEGORI</span></div><div class="category-list"><a href="#">Banyuasin <b>24</b></a><a href="#">Polisi <b>18</b></a><a href="#">Hukum <b>12</b></a><a href="#">Pemerintahan <b>9</b></a><a href="#">Sumsel <b>16</b></a></div></div>
-    </aside>
-  </section>
-
-  <section class="info-banner"><div><span>SUARA DAERAH</span><h2>Informasi yang dekat dengan masyarakat Banyuasin.</h2><p>Ruang informasi untuk menghadirkan kabar daerah secara jelas, berimbang dan mudah dipahami.</p></div><a href="#">Tentang Redaksi →</a></section>
+<div class="section-head"><div><span class="eyebrow">UPDATE</span><h2>Berita Terbaru</h2></div><a href="#">Lihat semua berita →</a></div>
+<section class="content-grid">
+<div class="cards" id="latest"></div>
+<aside class="sidebar">
+<div class="widget"><div class="widget-title"><span>TERPOPULER</span></div><ol class="popular" id="popular"></ol></div>
+<div class="widget"><div class="widget-title"><span>KATEGORI</span></div><div class="category-list"><a href="#">Banyuasin <b>24</b></a><a href="#">Polisi <b>18</b></a><a href="#">Hukum <b>12</b></a><a href="#">Pemerintahan <b>9</b></a><a href="#">Sumsel <b>16</b></a></div></div>
+</aside>
+</section>
+<section class="info-banner"><div><span>SUARA DAERAH</span><h2>Informasi yang dekat dengan masyarakat Banyuasin.</h2><p>Ruang informasi untuk menghadirkan kabar daerah secara jelas, berimbang dan mudah dipahami.</p></div><a href="admin.html">Kelola Berita →</a></section>
 </main>
 
-<footer class="footer"><div class="container footer-grid">
-  <div><a class="footer-brand" href="./index.html"><span class="logo">BN</span><strong>BANYUASIN NEWS</strong></a><p>Portal informasi Banyuasin dan Sumatera Selatan.</p></div>
-  <div><h4>Menu</h4><a href="#">Banyuasin</a><a href="#">Polisi</a><a href="#">Hukum</a><a href="#">Pemerintahan</a></div>
-  <div><h4>Redaksi</h4><a href="#">Tentang Kami</a><a href="#">Susunan Redaksi</a><a href="#">Pedoman Media Siber</a><a href="#">Koreksi Berita</a></div>
-  <div><h4>Kontak</h4><p>redaksi@contoh.id</p><p>© 2026 Banyuasin News</p></div>
-</div></footer>
-<script src="./script.js"></script>
-</body>
-</html>
+<footer class="footer"><div class="container footer-grid"><div><a class="footer-brand" href="index.html"><span class="logo">BN</span><strong>BANYUASIN NEWS</strong></a><p>Portal informasi Banyuasin dan Sumatera Selatan.</p></div><div><h4>Menu</h4><a href="#">Banyuasin</a><a href="#">Polisi</a><a href="#">Hukum</a><a href="#">Pemerintahan</a></div><div><h4>Redaksi</h4><a href="#">Tentang Kami</a><a href="#">Susunan Redaksi</a><a href="#">Pedoman Media Siber</a><a href="#">Koreksi Berita</a></div><div><h4>Kontak</h4><p>redaksi@contoh.id</p><p>© 2026 Banyuasin News</p></div></div></footer>
+<script src="news.js"></script><script src="script.js"></script>
+</body></html>

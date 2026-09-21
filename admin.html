@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Kelola Berita | Banyuasin News</title><link rel="stylesheet" href="style.css"><style>
+.admin{max-width:900px;margin:35px auto;background:#fff;border:1px solid #e0e7ef;border-radius:14px;padding:28px}.admin h1{margin-top:0}.field{margin:16px 0}.field label{display:block;font-size:13px;font-weight:800;margin-bottom:7px}.field input,.field textarea,.field select{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font:inherit}.field textarea{min-height:140px;resize:vertical}.btn{border:0;border-radius:8px;padding:12px 16px;background:#1466d8;color:#fff;font-weight:800;cursor:pointer}.btn.secondary{background:#64748b}.note{background:#f1f6fc;border-left:4px solid #1466d8;padding:13px 15px;font-size:13px;line-height:1.6}.output{display:none;margin-top:25px}.output textarea{width:100%;min-height:250px;font-family:monospace}
+</style></head><body>
+<header class="header"><div class="container header-in"><a class="brand" href="index.html"><span class="logo">BN</span><span><strong>BANYUASIN<span>NEWS</span></strong><small>Kelola Berita</small></span></a><a class="back" href="index.html">← Website</a></div></header>
+<div class="admin">
+<h1>Tambah Berita</h1>
+<div class="note"><b>Cara kerja:</b> isi formulir ini, klik “Buat File Berita”, lalu download file HTML dan upload ke repository GitHub. Untuk artikel baru, tambahkan juga datanya ke <b>news.js</b> agar muncul di beranda.</div>
+<div class="field"><label>Judul berita</label><input id="title" placeholder="Contoh: Polisi Laksanakan Patroli Pencegahan Karhutla"></div>
+<div class="field"><label>Kategori</label><select id="category"><option>BANYUASIN</option><option>POLISI</option><option>HUKUM</option><option>PEMERINTAHAN</option><option>SUMSEL</option><option>NASIONAL</option><option>PENDIDIKAN</option><option>EKONOMI</option><option>OLAHRAGA</option></select></div>
+<div class="field"><label>Tanggal</label><input id="date" value="21 September 2026"></div>
+<div class="field"><label>Penulis</label><input id="author" value="Redaksi"></div>
+<div class="field"><label>URL/path foto (opsional)</label><input id="image" placeholder="contoh: images/berita-01.jpg"></div>
+<div class="field"><label>Ringkasan</label><textarea id="excerpt" placeholder="Ringkasan 1–2 kalimat..."></textarea></div>
+<div class="field"><label>Isi berita — satu paragraf per baris</label><textarea id="content" placeholder="BANYUASIN — Paragraf pertama...\n\nParagraf kedua...\n\nParagraf ketiga..."></textarea></div>
+<button class="btn" onclick="generate()">Buat File Berita</button>
+<button class="btn secondary" onclick="clearForm()">Bersihkan</button>
+<div id="output" class="output"><h2>File siap di-download</h2><p>Download file HTML ini lalu upload ke root repository GitHub Anda.</p><a id="download" class="btn">Download Artikel HTML</a><h3>Data untuk news.js</h3><textarea id="newsData" readonly></textarea></div>
+</div>
+<script>
+function slugify(s){return s.toLowerCase().normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,70);}
+function esc(s){return String(s||"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));}
+function generate(){
+const title=document.getElementById("title").value.trim(),cat=document.getElementById("category").value,date=document.getElementById("date").value,author=document.getElementById("author").value,image=document.getElementById("image").value,excerpt=document.getElementById("excerpt").value,content=document.getElementById("content").value.split(/\\n\\s*\\n/).filter(Boolean);
+if(!title||!excerpt||!content.length){alert("Judul, ringkasan, dan isi berita wajib diisi.");return}
+const slug=slugify(title), paras=content.map(p=>`<p>${esc(p).replace(/\\n/g,"<br>")}</p>`).join("");
+const html=`<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>${esc(title)} | Banyuasin News</title><meta name="description" content="${esc(excerpt)}"><link rel="stylesheet" href="./style.css"><script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"NewsArticle","headline":title,"datePublished":date,"dateModified":date,"author":{"@type":"Person","name":author},"publisher":{"@type":"Organization","name":"Banyuasin News"}}).replace(/</g,"\\u003c")}</script></head><body><div class="topline"><div class="container topline-in"><span>${esc(date)}</span><span>Informasi Terkini Banyuasin & Sumatera Selatan</span></div></div><header class="header"><div class="container header-in"><a class="brand" href="index.html"><span class="logo">BN</span><span><strong>BANYUASIN<span>NEWS</span></strong><small>Aktual • Faktual • Terverifikasi</small></span></a><a class="back" href="index.html">← Beranda</a></div></header><nav class="nav"><div class="container nav-in"><a class="active" href="index.html">Beranda</a><a href="#">Banyuasin</a><a href="#">Polisi</a><a href="#">Hukum</a><a href="#">Pemerintahan</a><a href="#">Sumsel</a><a href="#">Nasional</a></div></nav><main class="container article-wrap"><article class="article-page"><div class="crumb">Beranda / ${esc(cat)}</div><span class="tag">${esc(cat)}</span><h1>${esc(title)}</h1><div class="byline"><b>${esc(author)}</b><br>${esc(date)}</div><div class="article-photo">${image?`<img src="${esc(image)}" alt="${esc(title)}">`:"FOTO UTAMA BERITA"}</div>${paras}</article><aside class="article-side"><div class="widget"><div class="widget-title"><span>BERITA TERKINI</span></div><a href="index.html">Kembali ke Beranda</a></div></aside></main><footer class="footer"><div class="container footer-bottom">© 2026 Banyuasin News • Tentang Kami • Redaksi • Kontak</div></footer></body></html>`;
+const blob=new Blob([html],{type:"text/html"}),url=URL.createObjectURL(blob),a=document.getElementById("download");a.href=url;a.download=`artikel-${slug}.html`;a.textContent=`Download artikel-${slug}.html`;
+const obj={id:slug,title,category:cat,date,author,image,excerpt,content};document.getElementById("newsData").value=JSON.stringify(obj,null,2);document.getElementById("output").style.display="block";
+}
+function clearForm(){document.querySelectorAll("input,textarea").forEach(x=>{if(x.id!=="date"&&x.id!=="author")x.value=""});document.getElementById("output").style.display="none";}
+</script></body></html>
