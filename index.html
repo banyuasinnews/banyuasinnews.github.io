@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banyuasin News — Informasi Terkini Banyuasin & Sumatera Selatan</title>
+  <meta name="description" content="Banyuasin News menyajikan informasi terkini seputar Banyuasin dan Sumatera Selatan.">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="container topbar-inner">
+    <div class="brand">
+      <div class="brand-mark">BN</div>
+      <div><strong>BANYUASIN NEWS</strong><span>Aktual • Faktual • Terverifikasi</span></div>
+    </div>
+    <button class="search-btn" onclick="toggleSearch()">⌕ <span>Cari berita</span></button>
+  </div>
+</header>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="active" href="index.html">Beranda</a>
+    <a href="#">Banyuasin</a>
+    <a href="#">Polisi</a>
+    <a href="#">Hukum</a>
+    <a href="#">Pemerintahan</a>
+    <a href="#">Sumsel</a>
+    <a href="#">Nasional</a>
+  </div>
+</nav>
+
+<div id="searchBox" class="search-box">
+  <div class="container">
+    <input id="searchInput" type="search" placeholder="Ketik kata kunci berita..." oninput="searchNews()">
+    <div id="searchResult"></div>
+  </div>
+</div>
+
+<main class="container">
+  <section class="hero">
+    <div class="hero-image">
+      <div class="image-placeholder">FOTO BERITA UTAMA</div>
+    </div>
+    <div class="hero-content">
+      <span class="category">BANYUASIN</span>
+      <h1><a href="artikel/ground-check-timbul-jaya.html">Ground Check Hotspot di Timbul Jaya, Polisi Temukan Lahan Terbakar Sekitar 1 Hektare</a></h1>
+      <p>Contoh tampilan artikel untuk portal berita Banyuasin News. Konten dapat diganti dengan berita yang sudah diverifikasi redaksi.</p>
+      <div class="meta">21 September 2026 • Redaksi</div>
+    </div>
+  </section>
+
+  <div class="section-head">
+    <h2>Berita Terbaru</h2><a href="#">Lihat Semua →</a>
+  </div>
+
+  <section class="news-grid" id="newsGrid">
+    <article class="card">
+      <div class="thumb">FOTO</div>
+      <div class="card-body">
+        <span class="category">BANYUASIN</span>
+        <h3><a href="artikel/ground-check-timbul-jaya.html">Ground Check Hotspot di Timbul Jaya, Polisi Temukan Lahan Terbakar Sekitar 1 Hektare</a></h3>
+        <p>21 September 2026 • Redaksi</p>
+      </div>
+    </article>
+    <article class="card">
+      <div class="thumb">FOTO</div>
+      <div class="card-body">
+        <span class="category">POLISI</span>
+        <h3><a href="#">Polisi Tingkatkan Patroli dan Pencegahan Karhutla di Wilayah Banyuasin</a></h3>
+        <p>21 September 2026 • Redaksi</p>
+      </div>
+    </article>
+    <article class="card">
+      <div class="thumb">FOTO</div>
+      <div class="card-body">
+        <span class="category">PEMERINTAHAN</span>
+        <h3><a href="#">Pelayanan Publik dan Informasi Masyarakat Terus Diperkuat</a></h3>
+        <p>20 September 2026 • Redaksi</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="latest">
+    <div>
+      <div class="section-head"><h2>Fokus Banyuasin</h2></div>
+      <div class="list-item">
+        <div class="mini-thumb">FOTO</div>
+        <div><span class="category">BANYUASIN</span><h3><a href="#">Informasi daerah terbaru dari berbagai wilayah Banyuasin</a></h3><p>20 September 2026</p></div>
+      </div>
+      <div class="list-item">
+        <div class="mini-thumb">FOTO</div>
+        <div><span class="category">HUKUM</span><h3><a href="#">Informasi penanganan perkara dan pelayanan kepolisian</a></h3><p>19 September 2026</p></div>
+      </div>
+    </div>
+    <aside>
+      <div class="section-head"><h2>Terpopuler</h2></div>
+      <ol class="popular">
+        <li><a href="artikel/ground-check-timbul-jaya.html">Ground Check Hotspot di Timbul Jaya</a></li>
+        <li><a href="#">Patroli Pencegahan Karhutla</a></li>
+        <li><a href="#">Informasi Terkini Banyuasin</a></li>
+      </ol>
+    </aside>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div><h3>BANYUASIN NEWS</h3><p>Portal informasi Banyuasin dan Sumatera Selatan.</p></div>
+    <div><h4>Informasi</h4><a href="#">Tentang Kami</a><a href="#">Redaksi</a><a href="#">Pedoman Media Siber</a><a href="#">Koreksi Berita</a></div>
+    <div><h4>Kontak</h4><p>Email: redaksi@contoh.id</p><p>© 2026 Banyuasin News</p></div>
+  </div>
+</footer>
+<script src="assets/script.js"></script>
+</body>
+</html>
