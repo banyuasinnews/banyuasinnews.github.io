@@ -1,111 +1,27 @@
 <!doctype html>
-<html lang="id">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Panel Redaksi | Banyuasin News</title>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Publikasi Berita • Banyuasin News</title>
 <link rel="stylesheet" href="style.css">
-</head>
-<body class="admin-page">
-<header class="header admin-header">
-  <div class="container header-in">
-    <a class="brand" href="index.html"><span class="logo">BN</span><span><strong>BANYUASIN<span>NEWS</span></strong><small>Panel Redaksi</small></span></a>
-    <div class="header-actions"><a class="back" href="index.html">Lihat Website</a><button class="search-btn" id="logoutBtn" style="display:none">Keluar</button></div>
-  </div>
-</header>
-
-<main class="container admin-wrap">
-  <section id="loginBox" class="login-card admin-card">
-    <span class="tag">AKSES REDAKSI</span><h1>Login Redaksi</h1>
-    <p>Masuk untuk menulis, mengunggah foto, menyimpan draft, dan menerbitkan berita Banyuasin News.</p>
-    <div class="login-fields">
-      <label>Email<input id="email" type="email" autocomplete="username" placeholder="email redaksi"></label>
-      <label>Password<input id="password" type="password" autocomplete="current-password" placeholder="password"></label>
-    </div>
-    <button class="primary big-btn" id="loginBtn">Masuk ke Panel</button>
-    <p id="loginMsg" class="msg"></p>
-  </section>
-
-  <section id="dashboard" style="display:none">
-    <div class="admin-head">
-      <div><span class="tag">PANEL REDAKSI</span><h1>Kelola Berita</h1><p class="admin-subtitle">Tulis berita sekali, lalu terbitkan langsung ke Banyuasin News.</p></div>
-      <button class="primary big-btn" id="newBtn">＋ Berita Baru</button>
-    </div>
-
-    <div class="admin-stats">
-      <div class="stat-card"><span>Total Berita</span><strong id="totalCount">0</strong></div>
-      <div class="stat-card"><span>Terbit</span><strong id="publishedCount">0</strong></div>
-      <div class="stat-card"><span>Draft</span><strong id="draftCount">0</strong></div>
-    </div>
-
-    <div class="admin-grid">
-      <section class="admin-card editor-card" id="editor">
-        <div class="card-heading"><div><span class="eyebrow">EDITOR</span><h2 id="editorTitle">Buat Berita Baru</h2></div><span id="editState" class="status-pill">DRAFT BARU</span></div>
-
-        <div class="form-section">
-          <label class="field-label">Judul Berita <span>*</span>
-            <input id="title" class="big-input" maxlength="180" placeholder="Tulis judul berita yang jelas dan menarik">
-            <small><span id="titleCount">0</span>/180 karakter</small>
-          </label>
-
-          <div class="two-col">
-            <label class="field-label">Slug
-              <input id="slug" placeholder="otomatis dari judul">
-              <small>Digunakan sebagai alamat artikel.</small>
-            </label>
-            <label class="field-label">Kategori <span>*</span>
-              <select id="category"><option>BANYUASIN</option><option>POLISI</option><option>HUKUM</option><option>PEMERINTAHAN</option><option>SUMSEL</option><option>NASIONAL</option><option>PENDIDIKAN</option><option>EKONOMI</option><option>OLAHRAGA</option></select>
-            </label>
-          </div>
-
-          <div class="two-col">
-            <label class="field-label">Penulis
-              <input id="author" value="Redaksi" placeholder="Nama penulis">
-            </label>
-            <label class="field-label">Status Publikasi
-              <select id="status"><option value="published">Terbitkan sekarang</option><option value="draft">Simpan sebagai draft</option></select>
-            </label>
-          </div>
-        </div>
-
-        <div class="form-section">
-          <label class="field-label">Foto Utama</label>
-          <div id="dropZone" class="upload-zone" tabindex="0">
-            <input id="image" type="file" accept="image/jpeg,image/png,image/webp,image/*" hidden>
-            <div class="upload-icon">＋</div>
-            <strong>Upload foto berita</strong>
-            <span>Klik untuk memilih foto atau seret foto ke sini</span>
-            <small>JPG, PNG, WEBP • Maksimal 8 MB</small>
-            <button type="button" class="outline-btn" id="chooseImage">Pilih Foto</button>
-          </div>
-          <div id="imagePreview" class="image-preview" style="display:none"><img id="previewImg" alt="Pratinjau foto berita"><div><b id="previewName"></b><small id="previewInfo"></small><button type="button" class="text-btn" id="removeImage">Hapus foto</button></div></div>
-        </div>
-
-        <div class="form-section">
-          <label class="field-label">Ringkasan Berita <span>*</span>
-            <textarea id="excerpt" maxlength="320" rows="4" placeholder="Tulis ringkasan 1–3 kalimat untuk tampil di halaman utama."></textarea>
-            <small><span id="excerptCount">0</span>/320 karakter</small>
-          </label>
-          <label class="field-label">Isi Berita <span>*</span>
-            <textarea id="content" rows="18" placeholder="Tulis isi berita di sini...&#10;&#10;Gunakan satu baris kosong untuk memisahkan paragraf."></textarea>
-            <small><span id="wordCount">0</span> kata</small>
-          </label>
-        </div>
-
-        <div class="save-bar">
-          <div><span class="save-dot"></span><span id="saveMsg">Siap menyimpan berita.</span></div>
-          <div class="save-actions"><button class="outline-btn" id="cancelBtn" type="button">Batal</button><button class="primary big-btn" id="saveBtn" type="button">Simpan Berita</button></div>
-        </div>
-      </section>
-
-      <aside class="admin-card list-card">
-        <div class="card-heading"><div><span class="eyebrow">ARSIP</span><h2>Berita Tersimpan</h2></div></div>
-        <div class="list-search"><input id="listSearch" placeholder="Cari berita..."></div>
-        <div id="articleList" class="article-list">Memuat...</div>
-      </aside>
-    </div>
-  </section>
-</main>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="supabase-config.js"></script>
-<script src="admin.js"></script>
+</head><body>
+<header><div class="wrap"><b>BN BANYUASIN NEWS</b><span> • Panel Publikasi</span></div></header>
+<main class="card">
+<h1>Publikasikan Berita</h1>
+<p class="note">Setiap publikasi membuat data berita di Supabase dan menghasilkan <b>HTML artikel statis</b> yang dapat dibaca crawler/validator tanpa bergantung pada JavaScript.</p>
+<form id="articleForm">
+<label>Judul berita<input id="title" name="title" required></label>
+<label>Slug URL<input id="slug" name="slug" required></label>
+<label>Kategori<select name="category"><option>BANYUASIN</option><option>POLISI</option><option>HUKUM</option><option>PEMERINTAHAN</option><option>SUMSEL</option><option>NASIONAL</option></select></label>
+<label>Penulis<input name="author" value="Redaksi"></label>
+<label>Tanggal & waktu terbit<input name="published_at" type="datetime-local" required></label>
+<label>Foto utama<input id="image" type="file" accept="image/*"></label>
+<label>Ringkasan<textarea name="excerpt" required></textarea></label>
+<label>Isi berita<textarea name="content" required></textarea></label>
+<label>Status<select name="status"><option value="published">Terbitkan</option><option value="draft">Draft</option></select></label>
+<button type="submit">Simpan & Buat Artikel Statis</button>
+</form>
+<div id="msg"></div><div id="preview"></div>
+</main>
+<script src="admin-static.js"></script>
 </body></html>
