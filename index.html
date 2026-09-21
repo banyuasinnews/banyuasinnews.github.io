@@ -1,39 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Banyuasin News | Berita Terkini Banyuasin & Sumatera Selatan</title>
-<meta name="description" content="Banyuasin News menyajikan informasi terkini, faktual dan terverifikasi seputar Banyuasin dan Sumatera Selatan.">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Banyuasin News | Berita Terkini</title>
+<meta name="description" content="Banyuasin News — informasi terkini Banyuasin dan Sumatera Selatan.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="topline"><div class="container topline-in"><span>Senin, 21 September 2026</span><span>Informasi Terkini Banyuasin & Sumatera Selatan</span></div></div>
+<div class="topline"><div class="container topline-in"><span>Informasi Terkini Banyuasin & Sumatera Selatan</span><span id="today"></span></div></div>
 <header class="header"><div class="container header-in">
 <a class="brand" href="index.html"><span class="logo">BN</span><span><strong>BANYUASIN<span>NEWS</span></strong><small>Aktual • Faktual • Terverifikasi</small></span></a>
-<div class="header-actions"><a class="social" href="#">f</a><a class="social" href="#">𝕏</a><a class="social" href="#">▶</a><button class="search-btn" onclick="toggleSearch()">⌕ <span>Cari</span></button></div>
+<div><button class="search-btn" id="searchBtn">⌕ Cari</button><a class="admin-link" href="admin.html">Admin</a></div>
 </div></header>
-<nav class="nav"><div class="container nav-in"><a class="active" href="index.html">Beranda</a><a href="#">Banyuasin</a><a href="#">Polisi</a><a href="#">Hukum</a><a href="#">Pemerintahan</a><a href="#">Ekonomi</a><a href="#">Pendidikan</a><a href="#">Olahraga</a><a href="#">Sumsel</a><a href="#">Nasional</a></div></nav>
-<div id="searchPanel" class="search-panel"><div class="container"><input id="searchInput" type="search" placeholder="Cari berita..." oninput="searchNews()"><div id="results"></div></div></div>
-<div class="breaking"><div class="container breaking-in"><b>TERKINI</b><span>Informasi dan perkembangan terbaru dari Banyuasin</span><i>›</i></div></div>
-
+<nav class="nav"><div class="container nav-in"><a class="active" href="index.html">Beranda</a><a href="?category=BANYUASIN">Banyuasin</a><a href="?category=POLISI">Polisi</a><a href="?category=HUKUM">Hukum</a><a href="?category=PEMERINTAHAN">Pemerintahan</a><a href="?category=SUMSEL">Sumsel</a><a href="?category=NASIONAL">Nasional</a></div></nav>
+<section class="search-panel" id="searchPanel"><div class="container"><input id="searchInput" placeholder="Cari judul berita..."></div></section>
+<div class="breaking"><div class="container"><b>TERKINI</b><span>Berita terbaru Banyuasin dan Sumatera Selatan</span></div></div>
 <main class="container">
-<section class="lead-grid">
-<article class="lead" id="lead"></article>
-<aside class="side-lead"><h2>Berita Pilihan</h2><div id="featured"></div></aside>
-</section>
-
-<div class="section-head"><div><span class="eyebrow">UPDATE</span><h2>Berita Terbaru</h2></div><a href="#">Lihat semua berita →</a></div>
-<section class="content-grid">
-<div class="cards" id="latest"></div>
-<aside class="sidebar">
-<div class="widget"><div class="widget-title"><span>TERPOPULER</span></div><ol class="popular" id="popular"></ol></div>
-<div class="widget"><div class="widget-title"><span>KATEGORI</span></div><div class="category-list"><a href="#">Banyuasin <b>24</b></a><a href="#">Polisi <b>18</b></a><a href="#">Hukum <b>12</b></a><a href="#">Pemerintahan <b>9</b></a><a href="#">Sumsel <b>16</b></a></div></div>
-</aside>
-</section>
-<section class="info-banner"><div><span>SUARA DAERAH</span><h2>Informasi yang dekat dengan masyarakat Banyuasin.</h2><p>Ruang informasi untuk menghadirkan kabar daerah secara jelas, berimbang dan mudah dipahami.</p></div><a href="admin.html">Kelola Berita →</a></section>
+<section class="lead-grid"><div id="lead"></div><aside class="side-lead"><h2>Berita Pilihan</h2><div id="featured"></div></aside></section>
+<div class="section-head"><div><small>UPDATE</small><h2>Berita Terbaru</h2></div></div>
+<section class="content-grid"><div class="cards" id="latest"><div class="loading">Memuat berita...</div></div><aside class="sidebar"><div class="widget"><div class="widget-title">TERPOPULER</div><div id="popular"></div></div><div class="widget"><div class="widget-title">KATEGORI</div><div class="category-list"><a href="?category=BANYUASIN">Banyuasin</a><a href="?category=POLISI">Polisi</a><a href="?category=HUKUM">Hukum</a><a href="?category=PEMERINTAHAN">Pemerintahan</a><a href="?category=SUMSEL">Sumsel</a></div></div></aside></section>
 </main>
-
-<footer class="footer"><div class="container footer-grid"><div><a class="footer-brand" href="index.html"><span class="logo">BN</span><strong>BANYUASIN NEWS</strong></a><p>Portal informasi Banyuasin dan Sumatera Selatan.</p></div><div><h4>Menu</h4><a href="#">Banyuasin</a><a href="#">Polisi</a><a href="#">Hukum</a><a href="#">Pemerintahan</a></div><div><h4>Redaksi</h4><a href="#">Tentang Kami</a><a href="#">Susunan Redaksi</a><a href="#">Pedoman Media Siber</a><a href="#">Koreksi Berita</a></div><div><h4>Kontak</h4><p>redaksi@contoh.id</p><p>© 2026 Banyuasin News</p></div></div></footer>
-<script src="news.js"></script><script src="script.js"></script>
+<footer class="footer"><div class="container footer-grid"><div><div class="footer-brand"><span class="logo">BN</span><b>BANYUASIN NEWS</b></div><p>Portal informasi Banyuasin dan Sumatera Selatan.</p></div><div><h4>Redaksi</h4><a href="#">Tentang Kami</a><a href="#">Pedoman Media Siber</a><a href="#">Koreksi Berita</a></div><div><h4>Kontak</h4><p>redaksi@contoh.id</p></div></div></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script><script src="app.js"></script>
 </body></html>

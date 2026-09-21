@@ -1,17 +1,23 @@
-Banyuasin News - Static CMS
+BANYUASIN NEWS - CMS DINAMIS
 
-File utama:
-- index.html = beranda
-- news.js = DATA BERITA. Tambahkan objek berita di sini agar tampil di beranda.
-- admin.html = formulir pembuat artikel HTML.
-- style.css = desain.
-- script.js = fungsi beranda.
+Ini adalah versi CMS yang benar-benar bisa:
+- Login admin menggunakan Supabase Auth
+- Menambah berita
+- Menyimpan draft / menerbitkan berita
+- Mengedit dan menghapus berita
+- Upload foto ke Supabase Storage
+- Menampilkan berita secara dinamis di GitHub Pages
+- Halaman artikel berdasarkan slug
 
-Alur tambah berita:
-1. Buka admin.html.
-2. Isi berita.
-3. Klik Buat File Berita.
-4. Download artikel HTML.
-5. Upload artikel HTML ke root repository GitHub.
-6. Tambahkan objek berita yang ditampilkan oleh admin.html ke news.js.
-7. Commit changes.
+SETUP:
+1. Buat project gratis di Supabase.
+2. Buka SQL Editor dan jalankan schema.sql.
+3. Di Authentication > Users, buat user admin dengan email/password.
+4. Isi supabase-config.js dengan Project URL dan Publishable/anon key.
+5. Upload semua file ke repository GitHub Pages.
+6. Buka https://username.github.io/admin.html untuk login redaksi.
+
+KEAMANAN:
+- Jangan pernah memasukkan service_role key ke website.
+- Publishable/anon key memang dapat berada di frontend jika Row Level Security (RLS) sudah benar.
+- Gunakan akun admin yang kuat.
